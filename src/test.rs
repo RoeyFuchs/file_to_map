@@ -1,5 +1,5 @@
 #[cfg(test)]
-mod test{
+mod test {
     use crate::FileToMap;
 
     #[test]
@@ -17,19 +17,29 @@ mod test{
 
     #[test]
     fn change_pair_sep() {
-        let file_to_map = FileToMap::new("tests_files/pair_sep.txt").set_pair_separator("SEP").build().unwrap();
+        let file_to_map = FileToMap::new("tests_files/pair_sep.txt")
+            .set_pair_separator("SEP")
+            .build()
+            .unwrap();
         assert_eq!(file_to_map["width"], "1920");
         assert_eq!(file_to_map["height"], "1080");
     }
     #[test]
     fn change_key_val_sep() {
-        let file_to_map = FileToMap::new("tests_files/key_val_sep.txt").set_key_value_separator("SEP").build().unwrap();
+        let file_to_map = FileToMap::new("tests_files/key_val_sep.txt")
+            .set_key_value_separator("SEP")
+            .build()
+            .unwrap();
         assert_eq!(file_to_map["width"], "1920");
         assert_eq!(file_to_map["height"], "1080");
     }
     #[test]
     fn change_separators() {
-        let file_to_map = FileToMap::new("tests_files/separators_change.txt").set_pair_separator(":)").set_key_value_separator("SEP").build().unwrap();
+        let file_to_map = FileToMap::new("tests_files/separators_change.txt")
+            .set_pair_separator(":)")
+            .set_key_value_separator("SEP")
+            .build()
+            .unwrap();
         assert_eq!(file_to_map["width"], "1920");
         assert_eq!(file_to_map["height"], "1080");
         assert_eq!(file_to_map["hey"], "hoi");
@@ -51,8 +61,4 @@ mod test{
         let file_to_map = FileToMap::new("tests_files/default.txt").build().unwrap();
         let _ = file_to_map["42"];
     }
-
 }
-
-
-
