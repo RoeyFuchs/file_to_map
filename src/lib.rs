@@ -48,16 +48,13 @@ impl<'a> FileToMap<'a> {
         let data = fs::read_to_string(self.file_name)?; // reading the file
         let data = self.strip_trailing_newline(&data); // remove the new-line in the end of the file
 
-        println!("{}", data);
         let splitted_data: Vec<String> =
             data.split(self.pair_sep).map(|s| String::from(s)).collect(); // split by pairs separator
-        println!("{:?}", splitted_data);
 
         let data_parse_result = splitted_data
             .iter()
             .try_for_each(|s| -> std::io::Result<()> {
                 let key_val: Vec<&str> = s.splitn(2, self.key_value_sep).collect(); // split to key and value
-                println!("{:?}", key_val);
                 if key_val.len() != 2 {
                     // will happen when cannot find key-value separator
                     return Err(Error::new(

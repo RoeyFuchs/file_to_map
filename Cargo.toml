@@ -5,7 +5,7 @@ authors = ["Roey Fuchs <fuchsroey@gmail.com>"]
 edition = "2018"
 description = "A small parser for using data from a file as a map"
 license = "MIT"
-repository = "
+repository = "https://github.com/RoeyFuchs/file_to_map"
 keywords = ["parser", "map", "file", "configuration"]
 categories = ["parsing", "filesystem", "data-structures", "config"]
 
