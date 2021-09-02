@@ -13,9 +13,12 @@ height=1080
 #### **`code.rs`**
 ```
 use file_to_map::FileToMap;
-let file_to_map = FileToMap::new("configuration.txt").build().unwrap();
-let width: i32 = file_to_map.get("width").unwrap().parse::<i32>().unwrap();
-let height: i32 = file_to_map["height"].parse::<i32>().unwrap();
+fn main() {
+	let file_to_map = FileToMap::new("configuration.txt").build().unwrap();
+	let width: i32 = file_to_map.get("width").unwrap().parse::<i32>().unwrap();
+	let height: i32 = file_to_map["height"].parse::<i32>().unwrap();
+	println!("{], {}", width, height);
+}
 ```
 
 The default separator between key and value is `=`, but it is possible to change it:
