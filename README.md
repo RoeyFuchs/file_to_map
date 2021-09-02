@@ -1,3 +1,4 @@
+[![Rust](https://github.com/RoeyFuchs/file_to_map/actions/workflows/rust.yml/badge.svg)](https://github.com/RoeyFuchs/file_to_map/actions/workflows/rust.yml)
 # File To Map
 A small parser for using data from a file as a map. 
 
